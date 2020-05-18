@@ -1,4 +1,89 @@
-.react-easy-popup {
-  display: flex;
-  color: skyblue;
+@import './animation.less';
+
+@popupPrefix: react-easy-popup;
+
+.@{popupPrefix} {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1999;
+  pointer-events: none; // 特别注意：为none时可以产生点透的效果 就当容器节点不存在
+
+  /* position为center时 使用flex居中 */
+  &__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .@{popupPrefix}-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none; // mask默认隐藏
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.72);
+    pointer-events: auto;
+
+    &__visible {
+      display: block; // 展示mask
+    }
+
+    // fix some android webview opacity render bug
+    &::before {
+      display: block;
+      width: 1px;
+      height: 1px;
+      margin-left: -10px;
+      background-color: rgba(0, 0, 0, 0.1);
+      content: '.';
+    }
+  }
+
+  .@{popupPrefix}-content {
+    position: relative;
+    width: 100%;
+    color: rgba(113, 113, 113, 1);
+    pointer-events: auto;
+    -webkit-overflow-scrolling: touch; /* ios5+ */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__top {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &__bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    &__left {
+      position: absolute;
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    &__right {
+      position: absolute;
+      right: 0;
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    &__center {
+      width: auto;
+      max-width: 100%;
+    }
+  }
 }

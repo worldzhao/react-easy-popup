@@ -13,7 +13,7 @@ export type PopupProps = React.PropsWithChildren<PopupPropsWithoutChildren>;
 // Popup默认属性
 export const defaultProps = {
   visible: false,
-  position: 'center' as const,
+  position: 'center' as Position,
   mask: true,
   maskClosable: false,
   onClose: () => {},

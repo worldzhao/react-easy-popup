@@ -1,0 +1,114 @@
+@animationDuration: 300ms;
+
+.react-easy-popup {
+  /* Fade */
+  &-fade-enter,
+  &-fade-appear,
+  &-fade-exit-done {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &-fade-appear-active,
+  &-fade-enter-active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity @animationDuration, visibility @animationDuration;
+  }
+  &-fade-exit,
+  &-fade-enter-done {
+    visibility: visible;
+    opacity: 1;
+  }
+  &-fade-exit-active {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity @animationDuration, visibility @animationDuration;
+  }
+
+  /* SlideUp */
+  &-slide-up-enter,
+  &-slide-up-appear,
+  &-slide-up-exit-done {
+    transform: translate(0, 100%);
+  }
+  &-slide-up-enter-active,
+  &-slide-up-appear-active {
+    transform: translate(0, 0);
+    transition: transform @animationDuration;
+  }
+  &-slide-up-exit,
+  &-slide-up-enter-done {
+    transform: translate(0, 0);
+  }
+  &-slide-up-exit-active {
+    transform: translate(0, 100%);
+    transition: transform @animationDuration;
+  }
+
+  /* SlideDown */
+  &-slide-down-enter,
+  &-slide-down-appear,
+  &-slide-down-exit-done {
+    transform: translate(0, -100%);
+  }
+  &-slide-down-enter-active,
+  &-slide-down-appear-active {
+    transform: translate(0, 0);
+    transition: transform @animationDuration;
+  }
+  &-slide-down-exit,
+  &-slide-down-enter-done {
+    transform: translate(0, 0);
+  }
+  &-slide-down-exit-active {
+    transform: translate(0, -100%);
+    transition: transform @animationDuration;
+  }
+
+  /* SlideLeft */
+  &-slide-left-enter,
+  &-slide-left-appear,
+  &-slide-left-exit-done {
+    transform: translate(100%, 0);
+  }
+
+  &-slide-left-enter-active,
+  &-slide-left-appear-active {
+    transform: translate(0, 0);
+    transition: transform @animationDuration;
+  }
+
+  &-slide-left-exit,
+  &-slide-left-enter-done {
+    transform: translate(0, 0);
+  }
+
+  &-slide-left-exit-active {
+    transform: translate(100%, 0);
+    transition: transform @animationDuration;
+  }
+
+  /* SlideRight */
+  &-slide-right-enter,
+  &-slide-right-appear,
+  &-slide-right-exit-done {
+    transform: translate(-100%, 0);
+  }
+
+  &-slide-right-enter-active,
+  &-slide-right-appear-active {
+    transform: translate(0, 0);
+    transition: transform @animationDuration;
+  }
+
+  &-slide-right-exit,
+  &-slide-right-enter-done {
+    transform: translate(0, 0);
+  }
+
+  &-slide-right-exit-active {
+    transform: translate(-100%, 0);
+    transition: transform @animationDuration;
+  }
+}
