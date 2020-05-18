@@ -1,4 +1,5 @@
 {
+  "homepage": "https://worldzhao.github.io/react-easy-popup",
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +16,9 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build"
+    "prepare": "tsdx build",
+    "predeploy": "npm run build && cd example && npm run build",
+    "deploy": "gh-pages -d ./example/dist"
   },
   "browserslist": [
     "last 2 versions",
@@ -46,6 +49,7 @@
     "@types/react-transition-group": "^4.2.4",
     "autoprefixer": "^9.8.0",
     "cssnano": "^4.1.10",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.5",
     "less": "^3.11.1",
     "react": "^16.13.1",
