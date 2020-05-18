@@ -17,7 +17,6 @@ export const defaultProps = {
   mask: true,
   maskClosable: false,
   onClose: () => {},
-  stopScrollUnderMask: false,
   destroyOnClose: false,
   wrapClassName: '',
 };
