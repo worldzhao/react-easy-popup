@@ -1,8 +1,57 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import styled, { css } from 'styled-components';
+
 import { Popup } from '../.';
-import '../dist/react-easy-popup.min';
+import '../dist/react-easy-popup.min.css';
+
+const Button = styled.button`
+  width: 120px;
+  height: 40px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: block;
+  outline: none;
+`;
+
+const common = css`
+  background-color: #fcfcfc;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CenterContent = styled.div`
+  ${common}
+  height: 40px;
+  border-radius: 4px;
+`;
+
+const TopContent = styled.div`
+  ${common}
+  height: 10px;
+`;
+
+const BottomContent = styled.div`
+  ${common}
+  height: 100px;
+`;
+
+const LeftContent = styled.div`
+  ${common}
+  height: 100%;
+  width: 200px;
+`;
+
+const RightContent = styled.div`
+  ${common}
+  height:100%;
+  width: 200px;
+`;
 
 const { useState } = React;
 
@@ -17,62 +66,52 @@ const App = () => {
 
   return (
     <div>
-      <button onClick={() => setVisible1(true)}>center</button>
+      <Button onClick={() => setVisible1(true)}>center</Button>
       <Popup maskClosable visible={visible1} onClose={() => setVisible1(false)}>
-        123
+        <CenterContent>center</CenterContent>
       </Popup>
 
-      <br />
-
-      <button onClick={() => setVisible2(true)}>left</button>
+      <Button onClick={() => setVisible2(true)}>left</Button>
       <Popup
         maskClosable
         position="left"
         visible={visible2}
         onClose={() => setVisible2(false)}
       >
-        123
+        <LeftContent>left</LeftContent>
       </Popup>
 
-      <br />
-
-      <button onClick={() => setVisible3(true)}>right</button>
+      <Button onClick={() => setVisible3(true)}>right</Button>
       <Popup
         maskClosable
         position="right"
         visible={visible3}
         onClose={() => setVisible3(false)}
       >
-        123
+        <RightContent>right</RightContent>
       </Popup>
 
-      <br />
-
-      <button onClick={() => setVisible4(true)}>top</button>
+      <Button onClick={() => setVisible4(true)}>top</Button>
       <Popup
         maskClosable
         position="top"
         visible={visible4}
         onClose={() => setVisible4(false)}
       >
-        123
+        <TopContent>top</TopContent>
       </Popup>
 
-      <br />
-
-      <button onClick={() => setVisible5(true)}>bottom</button>
+      <Button onClick={() => setVisible5(true)}>bottom</Button>
       <Popup
         maskClosable
         position="bottom"
         visible={visible5}
         onClose={() => setVisible5(false)}
       >
-        123
+        <BottomContent>bottom</BottomContent>
       </Popup>
 
-      <br />
-
-      <button
+      <Button
         onClick={() => {
           setVisible6(true);
           setTimeout(() => {
@@ -81,21 +120,19 @@ const App = () => {
         }}
       >
         no mask
-      </button>
+      </Button>
       <Popup mask={false} visible={visible6}>
-        123
+        <CenterContent>popup without mask</CenterContent>
       </Popup>
 
-      <br />
-
-      <button onClick={() => setVisible7(true)}>destroyOnClose</button>
+      <Button onClick={() => setVisible7(true)}>destroyOnClose</Button>
       <Popup
         destroyOnClose
         maskClosable
         visible={visible7}
         onClose={() => setVisible7(false)}
       >
-        123
+        <CenterContent>destroy content on close</CenterContent>
       </Popup>
     </div>
   );
