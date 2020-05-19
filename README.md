@@ -25,6 +25,7 @@ npm i react-easy-popup
 ```jsx
 import React, { useState } from 'react';
 import { Popup } from 'react-easy-popup';
+import 'react-easy-popup/dist/react-easy-popup.min.css';
 
 export default () => {
   const [visible, setVisible] = useState(false);
