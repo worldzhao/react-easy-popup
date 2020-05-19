@@ -6,10 +6,20 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "portal",
+    "popup"
   ],
   "engines": {
     "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -18,7 +28,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "predeploy": "npm run build && cd example && npm run build",
-    "deploy": "gh-pages -d ./example/dist"
+    "deploy": "gh-pages -d ./example/dist",
+    "release": "np --no-yarn --no-tests"
   },
   "browserslist": [
     "last 2 versions",
@@ -40,7 +51,10 @@
     "trailingComma": "es5"
   },
   "name": "react-easy-popup",
-  "author": "zhaozhiwen",
+  "authors": {
+    "name": "worldzhao",
+    "email": "1007326924@qq.com"
+  },
   "module": "dist/react-easy-popup.esm.js",
   "devDependencies": {
     "@types/classnames": "^2.2.10",
@@ -52,6 +66,7 @@
     "gh-pages": "^2.2.0",
     "husky": "^4.2.5",
     "less": "^3.11.1",
+    "np": "^6.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup-plugin-postcss": "^3.1.1",
