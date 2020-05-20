@@ -1,6 +1,6 @@
 {
   "homepage": "https://worldzhao.github.io/react-easy-popup",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
