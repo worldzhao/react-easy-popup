@@ -29,7 +29,7 @@
     "prepare": "tsdx build",
     "predeploy": "npm run build && cd example && npm run build",
     "deploy": "gh-pages -d ./example/dist",
-    "release": "np --no-yarn --no-tests"
+    "release": "np --no-yarn --no-tests --no-cleanup"
   },
   "browserslist": [
     "last 2 versions",
