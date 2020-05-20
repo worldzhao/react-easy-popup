@@ -29,15 +29,12 @@ import 'react-easy-popup/dist/react-easy-popup.min.css';
 export default () => {
   const [visible, setVisible] = useState(false);
   return (
-    <Popup
-      maskClosable
-      visible={visible}
-      onClose={() =>
-        setVisible(false);
-      }
-    >
-      <div className="your-content">hello world</div>
-    </Popup>
+    <>
+      <button onClick={() => setVisible(true)}>click me</button>
+      <Popup maskClosable visible={visible} onClose={() => setVisible(false)}>
+        <div className="your-content">hello world</div>
+      </Popup>
+    </>
   );
 };
 ```
