@@ -1,5 +1,6 @@
 {
   "homepage": "https://worldzhao.github.io/react-easy-popup",
+  "repository": "https://github.com/worldzhao/react-easy-popup",
   "version": "0.2.3",
   "license": "MIT",
   "main": "dist/index.js",
@@ -37,7 +38,7 @@
     "iOS >= 9"
   ],
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=16.8.0"
   },
   "husky": {
     "hooks": {
