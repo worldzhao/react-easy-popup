@@ -9,6 +9,8 @@
 
 React Component based on `ReactDOM.createPortal` function for transportation element.
 
+[React + TypeScript 从零开发 Popup 组件并发布到 npm](https://github.com/worldzhao/blog/issues/2)
+
 ## Install
 
 ```sh
